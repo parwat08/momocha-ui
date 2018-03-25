@@ -1,9 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import UserListPage from "./components/UserListPage";
+import CreateUser from "../src/components/CreateUser";
 
-const title = 'Momocha UI';
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <UserListPage />
+        <CreateUser />
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app'),
-);
+ReactDOM.render(<App />, document.getElementById("app"));
