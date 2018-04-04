@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash cd739716e7d47f548ead76ffcb980ea7
+ * @relayHash 881b32fa64dc630e9cbcf3aad9d8d5e2
  */
 
 /* eslint-disable */
@@ -34,6 +34,7 @@ fragment User_viewer on Viewer {
         id
         firstName
         lastName
+        email
         __typename
       }
       cursor
@@ -59,7 +60,7 @@ return {
   "operationKind": "query",
   "name": "UserListPageQuery",
   "id": null,
-  "text": "query UserListPageQuery {\n  viewer {\n    ...User_viewer\n    id\n  }\n}\n\nfragment User_viewer on Viewer {\n  user(last: 10) {\n    edges {\n      node {\n        id\n        firstName\n        lastName\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n",
+  "text": "query UserListPageQuery {\n  viewer {\n    ...User_viewer\n    id\n  }\n}\n\nfragment User_viewer on Viewer {\n  user(last: 10) {\n    edges {\n      node {\n        id\n        firstName\n        lastName\n        email\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasPreviousPage\n      startCursor\n    }\n  }\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
@@ -146,6 +147,13 @@ return {
                         "kind": "ScalarField",
                         "alias": null,
                         "name": "lastName",
+                        "args": null,
+                        "storageKey": null
+                      },
+                      {
+                        "kind": "ScalarField",
+                        "alias": null,
+                        "name": "email",
                         "args": null,
                         "storageKey": null
                       },

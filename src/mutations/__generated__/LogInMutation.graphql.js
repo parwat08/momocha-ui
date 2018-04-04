@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 82661ee1ceb3cc8298810887f5d1294e
+ * @relayHash ca6f80d6bf663d199bd813191ea01754
  */
 
 /* eslint-disable */
@@ -9,23 +9,14 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-export type SignUpMutationVariables = {|
-  signupInput: {
-    email: string,
-    password: string,
-    clientMutationId?: ?string,
-  },
-  loginInput: {
+export type LogInMutationVariables = {|
+  input: {
     email: string,
     password: string,
     clientMutationId?: ?string,
   },
 |};
-export type SignUpMutationResponse = {|
-  +signup: ?{|
-    +msg: ?string,
-    +clientMutationId: ?string,
-  |},
+export type LogInMutationResponse = {|
   +login: ?{|
     +token: ?string,
     +user: ?{|
@@ -37,15 +28,10 @@ export type SignUpMutationResponse = {|
 
 
 /*
-mutation SignUpMutation(
-  $signupInput: SignUpInput!
-  $loginInput: LogInInput!
+mutation LogInMutation(
+  $input: LogInInput!
 ) {
-  signup(input: $signupInput) {
-    msg
-    clientMutationId
-  }
-  login(input: $loginInput) {
+  login(input: $input) {
     token
     user {
       id
@@ -58,50 +44,12 @@ const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
-    "name": "signupInput",
-    "type": "SignUpInput!",
-    "defaultValue": null
-  },
-  {
-    "kind": "LocalArgument",
-    "name": "loginInput",
+    "name": "input",
     "type": "LogInInput!",
     "defaultValue": null
   }
 ],
 v1 = [
-  {
-    "kind": "LinkedField",
-    "alias": null,
-    "name": "signup",
-    "storageKey": null,
-    "args": [
-      {
-        "kind": "Variable",
-        "name": "input",
-        "variableName": "signupInput",
-        "type": "SignUpInput!"
-      }
-    ],
-    "concreteType": "SignUpPayload",
-    "plural": false,
-    "selections": [
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "msg",
-        "args": null,
-        "storageKey": null
-      },
-      {
-        "kind": "ScalarField",
-        "alias": null,
-        "name": "clientMutationId",
-        "args": null,
-        "storageKey": null
-      }
-    ]
-  },
   {
     "kind": "LinkedField",
     "alias": null,
@@ -111,7 +59,7 @@ v1 = [
       {
         "kind": "Variable",
         "name": "input",
-        "variableName": "loginInput",
+        "variableName": "input",
         "type": "LogInInput!"
       }
     ],
@@ -149,13 +97,13 @@ v1 = [
 return {
   "kind": "Request",
   "operationKind": "mutation",
-  "name": "SignUpMutation",
+  "name": "LogInMutation",
   "id": null,
-  "text": "mutation SignUpMutation(\n  $signupInput: SignUpInput!\n  $loginInput: LogInInput!\n) {\n  signup(input: $signupInput) {\n    msg\n    clientMutationId\n  }\n  login(input: $loginInput) {\n    token\n    user {\n      id\n    }\n  }\n}\n",
+  "text": "mutation LogInMutation(\n  $input: LogInInput!\n) {\n  login(input: $input) {\n    token\n    user {\n      id\n    }\n  }\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
-    "name": "SignUpMutation",
+    "name": "LogInMutation",
     "type": "Mutation",
     "metadata": null,
     "argumentDefinitions": v0,
@@ -163,11 +111,11 @@ return {
   },
   "operation": {
     "kind": "Operation",
-    "name": "SignUpMutation",
+    "name": "LogInMutation",
     "argumentDefinitions": v0,
     "selections": v1
   }
 };
 })();
-(node/*: any*/).hash = '1325511528963b6757ffaf7fd092aa0b';
+(node/*: any*/).hash = '18f2b9a44c56a91d0b7d24519dc0d4c3';
 module.exports = node;

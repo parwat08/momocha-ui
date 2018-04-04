@@ -7,11 +7,11 @@ class User extends Component {
       <div>
         {this.props.viewer.user.edges.map(node => (
           <div key={node.node.id}>
-            {node.node.firstName} {node.node.lastName}
+            {node.node.firstName} {node.node.lastName} {node.node.email}
           </div>
         ))}
       </div>
-    )
+    );
   }
 }
 
@@ -28,6 +28,7 @@ export default createFragmentContainer(
             id
             firstName
             lastName
+            email
           }
         }
       }

@@ -17,6 +17,7 @@ export type User_viewer = {|
         +id: string,
         +firstName: ?string,
         +lastName: ?string,
+        +email: ?string,
       |},
     |}>,
   |},
@@ -94,6 +95,13 @@ const node/*: ConcreteFragment*/ = {
                 {
                   "kind": "ScalarField",
                   "alias": null,
+                  "name": "email",
+                  "args": null,
+                  "storageKey": null
+                },
+                {
+                  "kind": "ScalarField",
+                  "alias": null,
                   "name": "__typename",
                   "args": null,
                   "storageKey": null
@@ -138,5 +146,5 @@ const node/*: ConcreteFragment*/ = {
     }
   ]
 };
-(node/*: any*/).hash = '56f6a022b93e11e5bfeddc65bb131b2c';
+(node/*: any*/).hash = '11b929f79ed09cc1f179130a50ae5f4c';
 module.exports = node;

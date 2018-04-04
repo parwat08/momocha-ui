@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import SignUpMutation from "../mutations/SignUpMutation";
+import SignUpMutation from "../mutations/SignUp";
 
 class CreateUser extends Component {
   state = {
-    firstName: "",
-    lastName: ""
+    email: "",
+    password: ""
   };
 
   render() {
@@ -13,17 +13,17 @@ class CreateUser extends Component {
         <div className="flex flex-column mt3">
           <input
             className="mb2"
-            value={this.state.firstName}
-            onChange={e => this.setState({ firstName: e.target.value })}
+            value={this.state.email}
+            onChange={e => this.setState({ email: e.target.value })}
             type="text"
-            placeholder="The first name of the user"
+            placeholder="Email"
           />
           <input
             className="mb2"
-            value={this.state.url}
-            onChange={e => this.setState({ lastName: e.target.value })}
-            type="text"
-            placeholder="The last name of user"
+            value={this.state.password}
+            onChange={e => this.setState({ password: e.target.value })}
+            type="password"
+            placeholder="password"
           />
         </div>
         <div className="button" onClick={() => this._createUser()}>
@@ -34,9 +34,10 @@ class CreateUser extends Component {
   }
 
   _createUser = () => {
-    const { firstName, lastName } = this.state;
-    SignUpMutation(firstName, lastName, function() {
+    const { email, password } = this.state;
+    SignUpMutation(email, password, function() {
       console.log("Mutation completed");
+      this.props.history.push("/");
     });
   };
 }
