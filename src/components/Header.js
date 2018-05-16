@@ -9,18 +9,17 @@ class Header extends Component {
     return (
       <div className="flex pa1 justify-between nowrap orange">
         <div className="flex flex-fixed black">
-          <div className="fw7 mr1">Hacker News</div>
-          <Link to="/" className="ml1 no-underline black">
-            News
+          <div className="fw7 mr1">This is gipal</div>
+          <Link to="/user" className="ml1 no-underline black">
+            users
           </Link>
-          {userId && (
-            <div className="flex">
-              <div className="ml1">|</div>
-              <Link to="/create" className="ml1 no-underline black">
-                submit
-              </Link>
-            </div>
-          )}
+
+          <div className="flex">
+            <div className="ml1">|</div>
+            <Link to="/create" className="ml1 no-underline black">
+              create
+            </Link>
+          </div>
         </div>
         <div className="flex flex-fixed">
           {userId ? (

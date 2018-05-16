@@ -19,8 +19,6 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
           </Switch>
         </div>
-        {/* <UserListPage />
-        <CreateUser /> */}
       </div>
     );
   }

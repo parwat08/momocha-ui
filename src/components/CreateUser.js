@@ -37,7 +37,7 @@ class CreateUser extends Component {
     const { email, password } = this.state;
     SignUpMutation(email, password, function() {
       console.log("Mutation completed");
-      this.props.history.push("/");
+      // this.props.history.push("/");
     });
   };
 }
